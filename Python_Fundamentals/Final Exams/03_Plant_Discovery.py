@@ -90,8 +90,10 @@ class Plant:
         else:
             return f"- {self.plant_name}; Rarity: {self.rarity}; Rating: {sum(self.rating):.2f}"
 
+
 number_of_plants = int(input())
 plant_information = {}
+
 for i in range(number_of_plants):
     name, rarity = [int(x) if x.isdigit() else x for x in input().split("<->")]
     plant_information[name] = plant_information.get(name, Plant(name))
