@@ -1,0 +1,36 @@
+# import numpy
+speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
+
+
+x = numpy.mean(speed) --> Use the NumPy "mean()" method to find the average speed:
+
+x = numpy.median(speed) --> Use the NumPy "median()" method to find the middle value:
+-> If there are two numbers in the middle, divide the sum of those numbers by two.
+
+"from scipy import stats"
+x = stats.mode(speed) --> #The mode() method returns a ModeResult object that contains the mode number (86),
+and count (how many times the mode number appeared (3)).
+
+
+What is Standard Deviation?
+Standard deviation is a number that describes how spread out the values are.
+A low standard deviation means that most of the numbers are close to the mean (average) value.
+A high standard deviation means that the values are spread out over a wider range.
+Example: This time we have registered the speed of 7 cars:
+speed = [86,87,88,86,87,85,86]
+
+x = numpy.std(speed) --> Use the NumPy std() method to find the standard deviation:  == 37.84501153334721
+
+
+speed = [32,111,138,28,59,77,97]
+x = numpy.var(speed) --> Use the NumPy var() method to find the variance:     == 1432.2448979591834
+
+
+
+What are Percentiles?
+Percentiles are used in statistics to give you a number that describes the value that a
+given percent of the values are lower than.
+
+Example: Let's say we have an array of the ages of all the people that lives in a street.
+ages = [5,31,43,48,50,41,7,11,15,39,80,82,32,2,8,6,25,36,27,61,31]
+x = numpy.percentile(ages, 75) --> Use the NumPy percentile() method to find the percentiles:
