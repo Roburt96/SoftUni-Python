@@ -1,0 +1,14 @@
+from collections import deque
+
+x = deque()
+
+x.append --> Adding to the right
+
+x.appendleft --> Adding to the left
+
+x.pop --> Removing from the right
+
+x.popleft --> Removing from the left
+
+x.reverse --> Reversing the deque
+
