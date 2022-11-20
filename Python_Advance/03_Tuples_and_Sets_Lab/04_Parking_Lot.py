@@ -6,7 +6,7 @@
 #     if 'IN' in cmd:
 #         car_entry.add(car_plate)
 #     elif 'OUT' in cmd:
-#         car_entry.remove(car_plate)
+#         car_entry.discard(car_plate)
 #
 #
 # if car_entry:
@@ -24,13 +24,17 @@ class Parking:
         self.parking.add(plate)
 
     def out_parking(self, plate):
-        self.parking.remove(plate)
+        self.parking.discard(plate)
+
+    def returning(self):
+        return self.parking
 
 
 all_car = Parking()
 
 
 def main():
+    parking = all_car.returning()
     number_of_commands = int(input())
     for i in range(number_of_commands):
         cmd, car_plate = input().split(", ")
@@ -40,7 +44,7 @@ def main():
             all_car.out_parking(car_plate)
 
     if all_car.parking:
-        print(Parking)
+        print(*parking, sep="\n")
     else:
         print(f"Parking Lot is Empty")
 
