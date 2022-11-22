@@ -11,3 +11,11 @@ for row in range(matrix_size):
     sum += matrix[row][row]
 print(sum)
 
+# matrix_size = int(input())
+# matrix = []
+# matrix = [[int(x) for x in input().split()]for _ in range(matrix_size)]
+#
+# sum = 0
+# for row in range(matrix_size):
+#     sum += matrix[row][row]
+# print(sum)
