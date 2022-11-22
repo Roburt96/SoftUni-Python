@@ -8,10 +8,13 @@ for i in range(matrix_size):
 symbol = input()
 
 for row in range(matrix_size):
+    if find:
+        break
     for columns in range(matrix_size):
         if matrix[row][columns] == symbol:
             print(f"{row, columns}")
-            break
-if find:
-    print(f"{symbol} does not occur in the matrix.")
+            find = True
+
+if not find:
+    print(f"{symbol} does not occur in the matrix")
 
