@@ -2,14 +2,14 @@ import re
 plates = {}
 
 
-def register_(name, plate):
+def register_(name, plate, valid):
     if name in plates:
-        print(f"ERROR: already registered with plate number {plate}")
+        print(f"ERROR: already registered with plate number {plates[name]}")
 
-    elif not check_valid:
+    elif not valid:
         print(f"ERROR: invalid license plate {plate}")
 
-    elif check_valid:
+    elif valid:
         if any([True if plates[key] == plate else False for key in plates]):
             print(f"ERROR: license plate {plate} is busy")
 
@@ -36,12 +36,8 @@ for i in range(num_of_plates):
         plate = info[1]
         pattern = (r"\b([A-Z]{2}[0-9]{4}[A-Z]{2})\b")
         check_valid = re.match(pattern, plate)
+        register_(name, plate, check_valid)
 
-        if check_valid:
-            register_(name, plate)
-        else:
-            print(f"ERROR: invalid license plate {plate}")
-            pass
     elif cmd == 'unregister':
         name = info[0]
         unregister_(name)
