@@ -4,7 +4,7 @@ plates = {}
 
 def register_(name, plate, valid):
     if name in plates:
-        print(f"ERROR: already registered with plate number {plate}")
+        print(f"ERROR: already registered with plate number {plates[name]}")
 
     elif not valid:
         print(f"ERROR: invalid license plate {plate}")
