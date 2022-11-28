@@ -1,0 +1,5 @@
+Making python to exe file:
+
+cmd>pyinstaller --onefile --noconsole imp.py ( without black window )
+
+cmd>auto-py-to-exe ( with back window )
