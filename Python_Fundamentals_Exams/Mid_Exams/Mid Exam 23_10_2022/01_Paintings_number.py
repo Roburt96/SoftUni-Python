@@ -25,7 +25,7 @@ while command != 'END':
             numbers[index_one], numbers[index_two] = numbers[index_two], numbers[index_one]
 
     elif 'Insert' in cmd_type:
-        index = int(data[0]) - 1
+        index = int(data[0]) + 1
         paint_number = int(data[1])
         if 0 <= index < len(numbers):
             numbers.insert(index, paint_number)
