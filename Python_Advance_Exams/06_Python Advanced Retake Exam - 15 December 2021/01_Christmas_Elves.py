@@ -41,7 +41,7 @@ while elf_energy and materials:
             materials.pop()
             elf_energy.append(elf_energy.popleft())
         else:
-            elf_energy *= 2
+            elf_energy[0] *= 2
             elf_energy.append(elf_energy.popleft())
 
 
