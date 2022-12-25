@@ -41,4 +41,4 @@ if power:
 
 print(f"Palm Fireworks: {palm}")
 print(f"Willow Fireworks: {willow}")
-print(f"Crossette  Fireworks: {crossette}")
+print(f"Crossette Fireworks: {crossette}")
