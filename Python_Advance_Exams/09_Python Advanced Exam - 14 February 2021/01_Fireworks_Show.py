@@ -6,6 +6,7 @@ power = deque(int(x) for x in input().split(', '))
 palm = 0
 willow = 0
 crossette = 0
+is_perfect = False
 
 while firework and power:
     if firework[0] <= 0:
@@ -29,7 +30,11 @@ while firework and power:
         firework.append(current_firework - 1)
         power.append(current_power)
 
-if palm >= 3 and willow >= 3 and crossette >= 3:
+    if palm >= 3 and willow >= 3 and crossette >= 3:
+        is_perfect = True
+        break
+
+if is_perfect:
     print("Congrats! You made the perfect firework show!")
 else:
     print("Sorry. You can't make the perfect firework show.")
