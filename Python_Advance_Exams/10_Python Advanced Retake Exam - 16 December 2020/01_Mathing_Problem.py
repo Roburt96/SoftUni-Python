@@ -28,10 +28,12 @@ while males and females:
     if current_male == current_female:
         matches += 1
 
-
-    elif current_female < current_male:
+    # elif current_female < current_male:
+    else:
         current_male -= 2
         males.append(current_male)
+
+
 
 print(f"Matches: {matches}")
 if not males:
