@@ -1,0 +1,38 @@
+INHERITANCE - extend the functionality of the codes existing classes to eliminate
+repetitive code
+
+ENCAPSULATION - stop objects from interacting with each other so classes cannot change
+or interact with the specific variables and functions of an object
+
+ABSTRACTION - isolate the impact of changes made to the code so the change will only affect
+the variables shown and not the outside code
+
+POLYMORPHISM - allows different classes to have methods with the same name
+
+super() - Method
+- returns a temporary object of the superclass
+- allows you to call methods of the SUPERCLASS in your SUBCLASS
+- the primary use case of this is to EXTEND the functionality of  the
+inherited method
+
+
+Method resolution order - 'MRO'
+- it isi the order in which methods should be inherited in the presence
+of multiple inhreritance
+- python 3 uses the C3 linearization algorithm for MRO
+- it is posible to see the MRO of a class using mro() method of the class
+
+Mixins
+-a mixin is a class that is implementing a specific set of features
+that needed in MANY DIFFERENT CLASSES
+
+- a mixin is a class that HAS NO DATA, only methods
+
+- mixins CANNOT BE INSTANTIATED by thremselves
+
+- we use mixins to EXTEND THE FUNCTIONALITY
+
+Mixins Advantages
+- provides NON-COMPLEX mechanisms of MULTIPLE INHERITANCE
+- provides CODE REUSABILITY
+= allow inheritance and use of only DESIRED FEATURES from the parent class, NOT ALL OF THEM
