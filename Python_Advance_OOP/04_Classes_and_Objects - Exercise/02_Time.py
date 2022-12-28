@@ -9,10 +9,29 @@ class Time:
         self.seconds = seconds
 
     def set_time(self, hours, minutes, seconds):
-        pass
+        self.hours = hours
+        self.minutes = minutes
+        self.seconds = seconds
 
     def get_time(self):
-        pass
+        return f"{self.hours:02d}:{self.minutes:02d}:{self.seconds:02d}"
 
     def next_seconds(self):
-        pass
+        self.seconds += 1
+        if self.seconds > Time.max_seconds:
+            self.seconds = 0
+            self.minutes += 1
+        elif self.minutes > Time.max_minutes:
+            self.minutes = 0
+            self.hours += 1
+        elif self.hours > Time.max_hours:
+            self.hours = 0
+            self.seconds += 1
+        return self.get_time()
+
+
+
+
+
+time = Time(9, 30, 59)
+print(time.next_seconds())
