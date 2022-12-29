@@ -44,7 +44,3 @@ else:
 matrix[car_row][car_col] = "C"
 print(f"Distance covered {km} km.")
 [print(*row, sep="") for row in matrix]
-
-
-
-
