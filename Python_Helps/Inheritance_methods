@@ -1,0 +1,10 @@
+Inheritance - extend the functionality of the code's
+existing classes to eliminate repetitive code
+
+Encapsulation - stop objects from interacting with each other so classes
+cannot change or interact with the specific variables and functions of an object
+
+Abstraction - isolate the impact of changes made to the code so the change
+will only affect the variables shown and not the outside code
+
+Polymorphism - allows different classes to have methods with the same name
