@@ -29,6 +29,8 @@ while chocolate and milk:
 
 if target:
     print("Great! You made all the chocolate milkshakes needed!")
+else:
+    print("Not enough milkshakes.")
 
 if chocolate:
     print(f"Chocolate: {', '.join(str(x) for x in chocolate)}")
@@ -37,6 +39,6 @@ else:
 if milk:
     print(f"Milk: {', '.join(str(x) for x in milk)}")
 else:
-    print("Milk empty")
+    print("Milk: empty")
 
 
