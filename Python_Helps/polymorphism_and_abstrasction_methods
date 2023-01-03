@@ -11,7 +11,7 @@ __truediv__(self, other_ == "/"
 __pow__(self, other[,modulo]) == "**"
 
 
-__it__(self, other) == "<"
+__lt__(self, other) == "<"
 
 __le__(self, other) == "<="
 
