@@ -73,7 +73,6 @@ def current_pos(current_p):
         matrix[car_row][car_col] = "."
 
 
-
 if __name__ == '__main__':
     matrix_size = int(input())
     racing_number = int(input())
