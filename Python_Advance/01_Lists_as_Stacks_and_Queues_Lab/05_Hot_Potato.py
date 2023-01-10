@@ -1,6 +1,5 @@
 from collections import deque
-kids = input().split()
-potato_move = int(input())
+kids, potato_move= input().split(), int(input())
 queue = deque(kids)
 while len(queue) != 1:
     queue.rotate(-potato_move)
