@@ -1,7 +1,7 @@
 def palindrome(word, inx):
     if word == word[::-1]:
-        return f"{word} is polindrome"
-    return f"{word} is not a polindrome"
+        return f"{word} is palindrome"
+    return f"{word} is not a palindrome"
 
 # def palindrome(word, idx):
 #     if idx == len(word) // 2:
