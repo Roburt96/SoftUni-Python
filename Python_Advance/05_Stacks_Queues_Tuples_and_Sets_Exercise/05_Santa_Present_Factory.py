@@ -38,8 +38,8 @@ while materials and magic:
         magic.popleft()
         materials[-1] += 15
 
-if (presents['Doll']['count'] and presents['Wooden train']['count']) or (presents['Teddy bear']['count']
-                                                                         and presents['Bicycle']['count']):
+if (presents['Doll']['count'] >= 1 and presents['Wooden train']['count'] >= 1) or (presents['Teddy bear']['count'] >= 1
+                                                                                   and presents['Bicycle']['count'] >= 1):
     print("The presents are crafted! Merry Christmas!")
 else:
     print("No presents this Christmas!")
