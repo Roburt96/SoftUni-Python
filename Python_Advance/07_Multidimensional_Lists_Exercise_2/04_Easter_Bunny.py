@@ -13,11 +13,10 @@ directions = (
     ('right', 0, 1)
 )
 for row in range(rows):
-    matrix.append([int(x) if x.isdigit() else x for x in input().split()])
+    matrix.append([int(x) if x[-1].isdigit() else x for x in input().split()])
     if "B" in matrix[row]:
         b_row, b_col = row, matrix[row].index("B")
         start_row, start_col = row, matrix[row].index("B")
-        break
 
 
 for move, row, col in directions:
@@ -44,7 +43,7 @@ if result != 0:
 
 
 
-
+#
 # 8
 # 4 18 9 7 24 41 52 11
 # 54 21 19 X 6 34 75 57
