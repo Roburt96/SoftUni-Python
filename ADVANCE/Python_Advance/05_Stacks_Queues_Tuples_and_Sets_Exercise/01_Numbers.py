@@ -28,9 +28,7 @@ for i in range(n_cmd):
         elif not row_two_numbers.issubset(row_one_numbers):
             print(False)
 
-sorted_first_row = sorted(row_one_numbers)
-sorted_second_row = sorted(row_two_numbers)
-print(*sorted_first_row, sep=", ")
-print(*sorted_second_row, sep=", ")
 
+print(*sorted(row_one_numbers), sep=", ")
+print(*sorted(row_two_numbers), sep=", ")
 
