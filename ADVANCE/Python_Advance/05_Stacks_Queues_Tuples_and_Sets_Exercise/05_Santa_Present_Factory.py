@@ -1,55 +1,60 @@
 from collections import deque
+
+materials = [int(x) for x in input().split()]
+magics = deque(int(x) for x in input().split())
+
 presents = {
-    "Doll": {'need': 150, 'count': 0},
-    "Wooden train": {'need': 250, 'count': 0},
-    "Teddy bear": {'need': 350, 'count': 0},
-    "Bicycle": {'need': 400, 'count': 0}
-}
-need = {
-    150: "Doll",
-    250: "Wooden train",
-    350: "Teddy bear",
-    400: "Bicycle"
+    "Bicycle": [0, 400],
+    "Doll": [0, 150],
+    "Teddy bear": [0, 300],
+    "Wooden train": [0, 250]
 }
 
-materials = deque(int(x) for x in input().split())   # pop
-magic = deque(int(x) for x in input().split())       # popleft
+while materials and magics:
+    cur_material = materials.pop()
+    cur_magic = magics.popleft()
 
-while materials and magic:
-    if materials[-1] == 0 or magic[1] == 0:
-        if materials[-1] == 0:
-            materials.pop()
-        if magic[0] == 0:
-            magic.popleft()
+    if cur_material == 0 and cur_magic == 0:
+        continue
+    if cur_material == 0:
+        magics.appendleft(cur_magic)
+        continue
+    if cur_magic == 0:
+        materials.append(cur_material)
         continue
 
-    total = materials[-1] * magic[0]
-    if total in need:
-        for key, value in presents.items():
-            if total == value['need']:
-                value['count'] += 1
-                materials.pop()
-                magic.popleft()
-    elif total < 0:
-        sum_total = materials[-1] + magic[0]
-        magic.popleft()
-        materials[-1] = sum_total
-    elif total > 0:
-        magic.popleft()
-        materials[-1] += 15
+    product_of_operation = cur_material * cur_magic
+    if product_of_operation < 0:
+        result = cur_material + cur_magic
+        materials.append(result)
 
-if (presents['Doll']['count'] >= 1 and presents['Wooden train']['count'] >= 1) or (presents['Teddy bear']['count'] >= 1
-                                                                                   and presents['Bicycle']['count'] >= 1):
-    print("The presents are crafted! Merry Christmas!")
+    else:
+        found_present = False
+        for gift, data in presents.items():
+            amount, magic_level = data
+            if magic_level == product_of_operation:
+                presents[gift][0] += 1
+                found_present = True
+                break
+        if product_of_operation > 0 and not found_present:
+            materials.append(cur_material + 15)
+
+if (presents["Bicycle"][0] >= 1 and presents["Teddy bear"][0] >= 1) or \
+        (presents["Doll"][0] >= 1 and presents["Wooden train"][0] >= 1):
+    print(f"The presents are crafted! Merry Christmas!")
 else:
-    print("No presents this Christmas!")
+    print(f"No presents this Christmas!")
+
 if materials:
-    print(f"Materials left: {', '.join(list(str(x) for x in materials)[::-1])}")
-if magic:
-    print(f"Magic left: {', '.join(str(x) for x in magic)}")
-for key, value in sorted(presents.items()):
-    if value:
-        print(f"{key}: {value['count']}")
+    print(f"Materials left: {', '.join(str(x) for x in materials[::-1])}")
+
+if magics:
+    print(f"Magic left: {', '.join(str(x) for x in magics)}")
+
+for gift, data in presents.items():
+    amount, pts = data
+    if amount >= 1:
+        print(f"{gift}: {amount}")
 
 
 
