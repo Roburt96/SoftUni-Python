@@ -1,5 +1,2 @@
-name = ['ivan', 'petur']
-
-while True:
-    name.append(name.pop(0))
-    print(name)
+text = input('Enter your text: ')
+print(f"Hello, {text}")
