@@ -133,9 +133,11 @@ def make_matrix():
         if 'E' in matrix[rows]:
             row, col = rows, matrix[rows].index('E')
 
+    MartianExplorer(row, col, matrix)
+
 
 make_matrix()
-MartianExplorer(row, col, matrix)
+
 
 
 
