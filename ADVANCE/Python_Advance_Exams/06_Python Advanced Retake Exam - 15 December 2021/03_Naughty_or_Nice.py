@@ -45,7 +45,6 @@ def naughty_or_nice_list(*args, **kwargs):
     return result
 
 
-
 # print(naughty_or_nice_list(
 #     [
 #         (3, "Amy"),
