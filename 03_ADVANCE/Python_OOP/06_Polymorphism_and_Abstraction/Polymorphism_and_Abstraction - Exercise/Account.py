@@ -5,6 +5,10 @@ class Account:
         self.amount = amount
         self._transactions = []
 
+    @property
+    def balance(self):
+        return self.amount + sum(self._transactions)
+
     def handle_transaction(self, transaction_amount):
         if self.balance + transaction_amount < 0:
             raise ValueError("sorry cannot go in debt!")
