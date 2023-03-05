@@ -1,0 +1,71 @@
+Add
+
+__add__(self, other)
+
+x + y invokes x.__add__(y)
+
+Subtract
+
+__sub__(self, other)
+
+x - y invokes x.__sub__(y)
+
+Multiply
+
+__mul__(self, other)
+
+x * y invokes x.__mul__(y)
+
+Divide
+
+__truediv__(self, other)
+
+x / y invokes x.__truediv__(y)
+
+Power
+
+__pow__(self, other)
+
+x ** y invokes x.__pow__(y)
+
+Length
+
+__len__(self)
+
+len(x) invokes x.__len__()
+
+Get Item
+
+__getitem__(self, key)
+
+x[key] invokes x.__getitem__(key)
+
+Set Item
+
+__setitem__(self, key, item)
+
+x[key] = item invokes x.__setitem__(key, item)
+
+Contains
+
+__contains__(self, item)
+
+item in x invokes x.__contains__(item)
+
+Iterator
+
+__iter__(self)
+
+iter(x) invokes x.__iter__()
+
+Next
+
+__next__(self)
+
+next(x) invokes x.__next__()
+
+x.__class__.__name__ --> return class name
+
+instance.__class__.__name__ --> return string class name
+
+type() and __name__attribute --> method to find the type or the class name of the object
