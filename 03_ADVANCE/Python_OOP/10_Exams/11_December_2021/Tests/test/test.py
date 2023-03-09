@@ -1,5 +1,5 @@
 from project.team import Team
-from unittest import TestCase
+from unittest import TestCase, main
 
 class TestTeam(TestCase):
 
@@ -11,7 +11,7 @@ class TestTeam(TestCase):
         self.assertEqual(self.team.name, 'Bears')
         self.assertEqual(self.team.members, {})
 
-    def test_property_name(self):
+    def test_property_bad_name(self):
         message = "Team Name can contain only letters!"
         with self.assertRaises(ValueError) as ve:
             self.team.name = 'yes bears'
@@ -40,23 +40,26 @@ class TestTeam(TestCase):
         self.assertEqual("Member with name Ivan does not exist", cant_remove)
 
     def test_other_team_gt_method_main_team(self):
-        self.new_team = Team("Cats")
-        self.new_team.add_member(Goshko=18, Petar=20)
-        self.team.add_member(Roburt=18)
-        len_result =  (len(self.team.members) < len(self.new_team.members))
-        result = True
 
-        self.assertEqual(result, True)
+        self.team.add_member(Roburt=20)
+        new_team = Team('Cats')
+        new_team.add_member(Ivan=20)
+        new_team.add_member(Tamer=18)
+        len_result =  (len(self.team.members) <= len(new_team.members))
+        result = False
+
+        self.assertEqual(result, False)
         self.assertTrue(len_result)
 
     def test_main_team_gt_other_team(self):
         new_team = Team("Cats")
         new_team.add_member(Petar=20)
-        self.team.add_member(Roburt=18, Goshko=18)
+        self.team.add_member(Roburt=18)
+        self.team.add_member(Goshko=18)
         len_result = (len(self.team.members) > len(new_team.members))
-        result = False
+        result = True
 
-        self.assertEqual(result, False)
+        self.assertEqual(result, True)
         self.assertTrue(len_result)
 
     def test_len_members(self):
@@ -71,9 +74,9 @@ class TestTeam(TestCase):
         self.team.add_member(Roburt=18)
         team_two.add_member(Goshko=18, Petar=20)
 
-        result = team_two + self.team
+        result = self.team + team_two
 
-        self.assertEqual(result.name, "CatsBears")
+        self.assertEqual(result.name, "BearsCats")
         self.assertEqual(result.members, {'Roburt': 18, 'Goshko': 18, 'Petar': 20})
 
     def test_successfully_str(self):
@@ -86,6 +89,7 @@ class TestTeam(TestCase):
 
         self.assertEqual(result, self.team.__str__())
 
-
+if __name__ == "__main__":
+    main()
 
 
