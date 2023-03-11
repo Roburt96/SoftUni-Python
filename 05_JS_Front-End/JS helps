@@ -1,0 +1,37 @@
+- Array methods
+-> .slice --> (start:end)
+-> .pish --> add element to array
+-> .indexOf --> print the element index
+-> .length --> number of elements
+
+- Object methods
+const person = {
+    name: "Leonardo",
+    shirt: "white"
+    };
+
+-> console.log(person.name) -> Leonardo
+-> console.log(person["shirt"]) -> white
+
+** assign object/add to object(dict)
+-> person.phone = '1-22-333-4444'
+=> console.log(person.phone) -> 1-22-333-4444
+
+*Example
+* create function, that func create object
+const introducer = (name, shird) => {
+    const person = {
+        name: name,
+        shirt: shird
+        assets: 100000,
+        liabilities: 50000,
+        netWorth: function () {
+            return THIS(this).assets - THIS(this).liabilities -> this. get from person information
+            }
+        };
+    const intro = `Hi, my name is ${person.name} and i have
+        ${person.shirt} shirt, my net worth is $${person.netWorth()}}` -> netWorth, without () will print all function
+                                                                          with () will print only result
+    return intro;
+    }
+console.log(introducer('Roburt', 'black')
