@@ -22,21 +22,16 @@ function func(people, type_grp, week_day){
         case 'Students':
             if (people >= 30){
                 totalPrice *= 0.85; break;
-            } else {
-                break;
-            }
+            }break;
         case 'Business':
             if (people >= 100){
                 totalPrice -= 10 * prices[type_grp][week_day]; break;
-            } else {
-                break;
-            }
+            }break;
+
         case 'Regular':
             if (people >= 10 && people <= 20){
                 totalPrice *= 0.95; break;
-            } else {
-                break;
-            }
+            }break;
         default:
             break;
     }
