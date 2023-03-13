@@ -4,6 +4,10 @@
 -> .indexOf --> print the element index
 -> .length --> number of elements
 
+- Logical
+-> && = and
+-> || = or
+
 - Object methods
 const person = {
     name: "Leonardo",
