@@ -1,14 +1,26 @@
-- Array methods
+- ARRAY METHODS
 -> .slice --> (start:end)
 -> .pish --> add element to array
 -> .indexOf --> print the element index
 -> .length --> number of elements
 
-- Logical
+
+- LIGICAL
 -> && = and
 -> || = or
 
-- Object methods
+
+-- Arithmetic operations
+--> +	Addition
+--> -	Subtraction
+--> *	Multiplication
+--> **	Exponentiation
+--> /	Division
+--> %	Modulus (Remainder)
+--> ++	Increment
+--> --	Decrement
+
+- OBJECT METHODS
 const person = {
     name: "Leonardo",
     shirt: "white"
@@ -21,7 +33,7 @@ const person = {
 -> person.phone = '1-22-333-4444'
 => console.log(person.phone) -> 1-22-333-4444
 
-*Example
+*EXAMPLE
 * create function, that func create object
 const introducer = (name, shird) => {
     const person = {
