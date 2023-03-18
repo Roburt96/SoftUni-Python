@@ -51,3 +51,14 @@ const introducer = (name, shird) => {
     return intro;
     }
 console.log(introducer('Roburt', 'black')
+
+
+  * Objects and classes
+
+const cat = {name: 'Tom', age: 5}
+
+Object.keys(cat); // [ 'name', 'age' ]
+
+Object.values(cat; // [Tom, 5 ]
+
+Object.entries(cat); // [[name, Tom] [age, 5]]
