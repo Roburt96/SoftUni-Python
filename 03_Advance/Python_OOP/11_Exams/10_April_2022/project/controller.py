@@ -46,10 +46,10 @@ class Controller:
         return f"{player.name} sustained successfully with {supply.name}"
 
     def duel(self, player_name1: str, player_name2: str):
-        ...
+        pass
     
     def next_day(self):
-        ...
+        pass
 
     def __str__(self):
-        ...
+        pass
