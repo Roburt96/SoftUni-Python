@@ -3,7 +3,7 @@ from project.delicacies.delicacy import Delicacy
 
 class Gingerbread(Delicacy):
 
-    def __init__(self, name, price, portion):
+    def __init__(self, name, price, portion=200):
         super().__init__(name, portion, price)
 
     def details(self):

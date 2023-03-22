@@ -1,30 +1,16 @@
-import unittest
+from project.christmas_pastry_shop_app import ChristmasPastryShopApp
 
-from project.booths.open_booth import OpenBooth
-from project.delicacies.delicacy import Delicacy
-from project.delicacies.stolen import Stolen
-from project.validator.validator import Validator
-
-
-# class MyTestCase(unittest.TestCase):
-#
-#     def setUp(self) -> None:
-#         self.stolen = Stolen('Stolen', 1, 1)
-#
-#     def test_valid_name(self):
-#         self.stolen.name = " "
-#         Validator.delicacy_check_valid_name(self.stolen.name)
-#
-#
-# if __name__ == '__main__':
-#     unittest.main()
-
-openbooth = OpenBooth(1, 10)
-openbooth2 = OpenBooth(2, 10)
-openbooth.reserve(2)
-print(openbooth.price_for_reservation)
-print(openbooth.is_reserved)
-print(openbooth2.is_reserved)
-
-
-
+shop = ChristmasPastryShopApp()
+print(shop.add_delicacy("Gingerbread", "Gingy", 5.20))
+print(shop.delicacies[0].details())
+print(shop.add_booth("Open Booth", 1, 30))
+print(shop.add_booth("Private Booth", 10, 5))
+print(shop.reserve_booth(30))
+print(shop.order_delicacy(1, "Gingy"))
+print(shop.leave_booth(1))
+print(shop.reserve_booth(5))
+print(shop.order_delicacy(1, "Gingy"))
+print(shop.order_delicacy(1, "Gingy"))
+print(shop.order_delicacy(1, "Gingy"))
+print(shop.leave_booth(1))
+print(shop.get_income())
