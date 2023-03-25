@@ -21,6 +21,14 @@ class Booth(ABC):
         Validator.booth_check_capacity_is_valid_number(value)
         self.__capacity = value
 
+    def leave_booth(self):
+        self.delicacy_orders = []
+        self.price_for_reservation = 0
+        self.is_reserved = False
+
+    def calculate_bill(self):
+        return sum([d.price for d in self.delicacy_orders]) + self.price_for_reservation
+
     @abstractmethod
     def reserve(self, number_of_people: int):
         ...
