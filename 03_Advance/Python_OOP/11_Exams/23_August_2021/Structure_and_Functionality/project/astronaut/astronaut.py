@@ -18,10 +18,9 @@ class Astronaut(ABC):
         Validator.check_name_is_empty_string(value)
         self.__name = value
 
-    @abstractmethod
+    #@abstractmethod     #not working with abstractmethod ...
     def breathe(self):
         ...
-
     @abstractmethod
     def increase_oxygen(self, amount: int):
         ...
