@@ -32,12 +32,12 @@ class Bakery:
                 'Cake': Cake}
 
     @property
-    def drink_type(self):
+    def __drink_type(self):
         return {'Tea': Tea,
                 'Water': Water}
 
     @property
-    def table_type(self):
+    def __table_type(self):
         return {'InsideTable': InsideTable,
                 'OutsideTable': OutsideTable}
 
@@ -57,31 +57,33 @@ class Bakery:
                 return f
 
     def add_food(self, food_type: str, name: str, price: float):
-        food = self.__food_type[food_type](name, price)
-        Validator.check_exist_food(name, self.food_menu, f"{food_type} {name} is already in the menu!")
+        if food_type in self.__food_type:
+            Validator.check_exist_food(name, self.food_menu, f"{food_type} {name} is already in the menu!")
 
-        self.food_menu.append(food)
-        return f"Added {name} ({food_type}) to the food menu"
+            food = self.__food_type[food_type](name, price)
+            self.food_menu.append(food)
+            return f"Added {name} ({food_type}) to the food menu"
 
     def add_drink(self, drink_type: str, name: str, portion: float, brand:str):
-        drink = self.drink_type[drink_type](name, portion, brand)
-        Validator.check_exist_drink(name, self.drinks_menu, f"{drink_type} {name} is already in the menu!")
+        if drink_type in self.__drink_type:
+            Validator.check_exist_drink(name, self.drinks_menu, f"{drink_type} {name} is already in the menu!")
 
-        self.drinks_menu.append(drink)
-        return f"Added {name} ({drink_type}) to the drink menu"
+            drink = self.__drink_type[drink_type](name, portion, brand)
+            self.drinks_menu.append(drink)
+            return f"Added {name} ({drink_type}) to the drink menu"
 
     def add_table(self, table_type: str, table_number: int, capacity: int):
-        table = self.table_type[table_type](table_number, capacity)
-        Validator.check_table_exist(table_number, self.tables_repository, f"Table {table_number} is already in the bakery!")
-
-        self.tables_repository.append(table)
-        return f"Added table number {table_number} to the bakery"
+        if table_type in self.__table_type:
+            Validator.check_table_exist(table_number, self.tables_repository,
+                                        f"Table {table_number} is already in the bakery!")
+            table = self.__table_type[table_type](table_number, capacity)
+            self.tables_repository.append(table)
+            return f"Added table number {table_number} to the bakery"
 
     def reserve_table(self, number_of_people: int):
         table = self.__reserve_table(number_of_people)
         if table:
-            table.is_reserved = True
-            table.number_of_people += number_of_people
+            table.reserve(number_of_people)
             return f"Table {table.table_number} has been reserved for {number_of_people} people"
         return f"No available table for {number_of_people} people"
 
@@ -141,7 +143,7 @@ class Bakery:
         return "\n".join(t.free_table_info() for t in self.tables_repository)
 
     def get_total_income(self):
-        return f"Total income: {self.total_income:.2f}"
+        return f"Total income: {self.total_income:.2f}lv"
 
 
 

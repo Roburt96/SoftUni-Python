@@ -41,4 +41,4 @@ class Drink(ABC):
 
     @abstractmethod
     def __repr__(self):
-        return f" - {self.name} {self.brand} - {self.portion}ml - {self.price:.2f}lv"
+        return f" - {self.name} {self.brand} - {self.portion:.2f}ml - {self.price:.2f}lv"
